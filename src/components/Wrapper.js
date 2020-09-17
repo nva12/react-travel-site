@@ -6,19 +6,19 @@ const StyledWrapper = styled.div`
   overflow: hidden;
   padding-left: 18px;
   padding-right: 18px;
-  max-width: ${(props) => (props.medium ? `976px` : `1236px`)};
+  max-width: ${(props) => (props.isMedium ? `976px` : `1236px`)};
   margin-left: auto;
   margin-right: auto;
 
   ${(props) =>
-    props.nested &&
+    props.isNested &&
     css`
       padding-left: 0;
       padding-right: 0;
     `}
 
   ${(props) =>
-    props.noPaddingUntilLg &&
+    props.hasNoPaddingUntilLg &&
     css`
       padding-left: 0;
       padding-right: 0;
@@ -29,7 +29,7 @@ const StyledWrapper = styled.div`
     `}
 
   ${(props) =>
-    props.marginBottom &&
+    props.hasMarginBottom &&
     css`
       margin-bottom: 1rem;
       ${respondTo.sm`
@@ -39,13 +39,13 @@ const StyledWrapper = styled.div`
 `;
 
 const Wrapper = ({ ...props }) => {
-  const { medium, noPaddingUntilLg, nested, marginBottom } = props;
+  const { isMedium, hasNoPaddingUntilLg, isNested, hasMarginBottom } = props;
   return (
     <StyledWrapper
-      medium={medium}
-      noPaddingUntilLg={noPaddingUntilLg}
-      nested={nested}
-      marginBottom={marginBottom}
+      isMedium={isMedium}
+      hasNoPaddingUntilLg={hasNoPaddingUntilLg}
+      isNested={isNested}
+      hasMarginBottom={hasMarginBottom}
     >
       {props.children}
     </StyledWrapper>

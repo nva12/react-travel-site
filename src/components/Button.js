@@ -5,7 +5,7 @@ import { respondTo } from '../styles/mixins';
 
 const StyledButton = styled.a`
   display: inline-block;
-  padding: ${(props) => (props.large ? `1.1rem 1.9rem` : `0.75rem 1.2rem`)};
+  padding: ${(props) => (props.isLarge ? `1.1rem 1.9rem` : `0.75rem 1.2rem`)};
   background-color: ${(props) =>
     props.secondary ? `${palette.secondary.main}` : `${palette.primary.main}`};
   color: #fff;
@@ -13,14 +13,14 @@ const StyledButton = styled.a`
   cursor: pointer;
 
   ${(props) =>
-    props.large &&
+    props.isLarge &&
     respondTo.sm`
     font-size: 1.25rem;
   `}
 `;
 
 const Button = ({ ...props }) => (
-  <StyledButton secondary={props.secondary} large={props.large}>
+  <StyledButton secondary={props.secondary} isLarge={props.isLarge}>
     {props.children}
   </StyledButton>
 );
