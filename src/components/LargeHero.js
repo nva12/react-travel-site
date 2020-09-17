@@ -1,18 +1,14 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { palette } from '../styles/variables';
 import { respondTo } from '../styles/mixins';
 import Wrapper from './Wrapper';
 import Button from './Button';
+import LargeHeroPicture from './LargeHeroPicture';
 
 const LargeHeroContainer = styled.div`
   position: relative;
   border-bottom: 10px solid ${palette.primary.main};
-`;
-
-const Image = styled.img`
-  display: block;
-  height: 600px; /* remove later */
 `;
 
 const TextContent = styled.div`
@@ -63,37 +59,7 @@ const Description = styled.p`
 
 const LargeHero = () => (
   <LargeHeroContainer>
-    <picture>
-      <source
-        srcset="
-            src/images/hero--large.jpg        1920w,
-            src/images/hero--large-hi-dpi.jpg 3840w
-          "
-        media="(min-width: 1380px)"
-      />
-      <source
-        srcset="
-            src/images/hero--medium.jpg        1380w,
-            src/images/hero--medium-hi-dpi.jpg 2760w
-          "
-        media="(min-width: 990px)"
-      />
-      <source
-        srcset="
-            src/images/hero--small.jpg         990w,
-            src/images/hero--small-hi-dpi.jpg 1980w
-          "
-        media="(min-width: 640px)"
-      />
-      <Image
-        srcset="
-            src/images/hero--smaller.jpg         640w,
-            src/images/hero--smaller-hi-dpi.jpg 1280w
-          "
-        alt="Coastal view of ocean and mountains"
-        className="large-hero__image"
-      />
-    </picture>
+    <LargeHeroPicture />
     <TextContent>
       <Wrapper>
         <Title>Your clarity</Title>
