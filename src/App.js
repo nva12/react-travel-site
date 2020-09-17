@@ -4,6 +4,7 @@ import GlobalStyle from './styles/globalStyles';
 import LargeHero from './components/LargeHero';
 import OurBeginning from './components/OurBeginning';
 import SiteHeader from './components/SiteHeader';
+import SiteFooter from './components/SiteFooter';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <SiteHeader />
       <LargeHero />
       <OurBeginning />
+      <SiteFooter />
     </Fragment>
   );
 }
