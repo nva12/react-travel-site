@@ -68,7 +68,7 @@ const LargeHero = () => (
           We create soul restoring journeys that inspire you to be you.
         </Description>
         <p>
-          <Button href="/" className="open-modal" secondary large>
+          <Button href="/" className="open-modal" secondary isLarge>
             Get Started Today
           </Button>
         </p>
