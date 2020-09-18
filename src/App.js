@@ -5,6 +5,7 @@ import LargeHero from './components/LargeHero';
 import OurBeginning from './components/OurBeginning';
 import SiteHeader from './components/SiteHeader';
 import SiteFooter from './components/SiteFooter';
+import OurFeatures from './components/OurFeatures';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <SiteHeader />
       <LargeHero />
       <OurBeginning />
+      <OurFeatures />
       <SiteFooter />
     </Fragment>
   );
