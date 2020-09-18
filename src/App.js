@@ -6,6 +6,7 @@ import OurBeginning from './components/OurBeginning';
 import SiteHeader from './components/SiteHeader';
 import SiteFooter from './components/SiteFooter';
 import OurFeatures from './components/OurFeatures';
+import Testimonials from './components/Testimonials';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <LargeHero />
       <OurBeginning />
       <OurFeatures />
+      <Testimonials />
       <SiteFooter />
     </Fragment>
   );

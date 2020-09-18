@@ -33,7 +33,7 @@ const TitleContainer = styled.h2`
   ${(props) =>
     props.primary &&
     css`
-      color: ${palette.primary.blue};
+      color: ${palette.primary.main};
     `}
 
   ${(props) =>
