@@ -62,7 +62,7 @@ const StyledHeadline = styled.h2`
     `}
 `;
 
-const Headline = ({ ...props }) => {
+export const Headline2 = ({ ...props }) => {
   const {
     centered,
     secondary,
@@ -89,4 +89,30 @@ const Headline = ({ ...props }) => {
   );
 };
 
-export default Headline;
+export const Headline3 = ({ ...props }) => {
+  const {
+    centered,
+    secondary,
+    small,
+    narrow,
+    light,
+    smallMarginBottom,
+    largeMarginBottom,
+    noMarginTop,
+  } = props;
+  return (
+    <StyledHeadline
+      as="h3"
+      centered={centered}
+      secondary={secondary}
+      small={small}
+      narrow={narrow}
+      light={light}
+      smallMarginBottom={smallMarginBottom}
+      largeMarginBottom={largeMarginBottom}
+      noMarginTop={noMarginTop}
+    >
+      {props.children}
+    </StyledHeadline>
+  );
+};
