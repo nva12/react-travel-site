@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { respondTo, clearfix } from '../styles/mixins';
+import { clearfix } from '../styles/mixins';
 
 const RowContainer = styled.div`
   ${clearfix}

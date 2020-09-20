@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
+import throttle from 'lodash/throttle';
+
 import { palette } from '../styles/variables';
 import { respondTo } from '../styles/mixins';
 import Wrapper from './Wrapper';
@@ -21,11 +23,13 @@ const HeaderContainer = styled.header`
   ${respondTo.md`
     position: fixed;
     background-color: rgba(47, 85, 114, 0.3);
-
-    .isDark {
-      background-color: rgba(23, 51, 72, 0.85);
-    }
   `}
+
+  ${(props) =>
+    props.isDark &&
+    css`
+      ${respondTo.md`background-color: rgba(23, 51, 72, 0.85);`}
+    `}
 `;
 
 const LogoContainer = styled.div`
@@ -42,10 +46,12 @@ const LogoContainer = styled.div`
     padding: 25px 36px;
     transform-origin: 0 0;
     transition: transform 0.3s ease-out;
+  `}
 
-    .isDark & {
-      transform: scale(0.55);
-    }
+  ${(props) =>
+    props.isDark &&
+    css`
+      ${respondTo.md`transform: scale(0.55);`}
     `}
 `;
 
@@ -79,10 +85,25 @@ const BtnContainer = styled.div`
 `;
 
 const SiteHeader = () => {
+  const [isDark, setIsDark] = useState(false);
+
+  window.addEventListener(
+    'scroll',
+    throttle(() => handleScroll(), 200)
+  );
+
+  const handleScroll = () => {
+    if (window.scrollY > 60) {
+      setIsDark(true);
+    } else {
+      setIsDark(false);
+    }
+  };
+
   return (
-    <HeaderContainer>
+    <HeaderContainer isDark={isDark}>
       <Wrapper>
-        <LogoContainer>
+        <LogoContainer isDark={isDark}>
           <img
             src={require('../images/icons/clear-view-escapes.svg')}
             alt={`logo`}
