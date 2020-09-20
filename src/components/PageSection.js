@@ -38,12 +38,13 @@ const StyledSection = styled.section`
 `;
 
 const PageSection = ({ ...props }) => {
-  const { hasBlueBg, isTestimonials, hasNoPaddingBottomUntilLg } = props;
+  const { hasBlueBg, isTestimonials, hasNoPaddingBottomUntilLg, id } = props;
   return (
     <StyledSection
       hasBlueBg={hasBlueBg}
       isTestimonials={isTestimonials}
       hasNoPaddingBottomUntilLg={hasNoPaddingBottomUntilLg}
+      id={id}
     >
       {props.children}
     </StyledSection>

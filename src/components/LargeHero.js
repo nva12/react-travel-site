@@ -57,7 +57,7 @@ const Description = styled.p`
   `}
 `;
 
-const LargeHero = () => (
+const LargeHero = ({ ...props }) => (
   <LargeHeroContainer>
     <LargeHeroPicture />
     <TextContent>
@@ -68,7 +68,12 @@ const LargeHero = () => (
           We create soul restoring journeys that inspire you to be you.
         </Description>
         <p>
-          <Button href="/" className="open-modal" secondary isLarge>
+          <Button
+            href="/"
+            secondary
+            isLarge
+            handleModalOpen={props.handleModalOpen}
+          >
             Get Started Today
           </Button>
         </p>

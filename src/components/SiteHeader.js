@@ -88,7 +88,7 @@ const BtnContainer = styled.div`
   `}
 `;
 
-const SiteHeader = () => {
+const SiteHeader = ({ ...props }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
 
@@ -117,7 +117,7 @@ const SiteHeader = () => {
         <MenuIcon isOpen={isOpen} setIsOpen={setIsOpen} />
         <MenuContent isOpen={isOpen}>
           <BtnContainer>
-            <Button href="/" className="open-modal">
+            <Button href="/" handleModalOpen={props.handleModalOpen}>
               Get in Touch
             </Button>
           </BtnContainer>

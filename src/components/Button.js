@@ -20,7 +20,11 @@ const StyledButton = styled.a`
 `;
 
 const Button = ({ ...props }) => (
-  <StyledButton secondary={props.secondary} isLarge={props.isLarge}>
+  <StyledButton
+    secondary={props.secondary}
+    isLarge={props.isLarge}
+    onClick={props.handleModalOpen}
+  >
     {props.children}
   </StyledButton>
 );

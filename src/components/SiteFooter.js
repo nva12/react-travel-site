@@ -24,14 +24,14 @@ const FooterText = styled.span`
   `}
 `;
 
-const SiteFooter = () => (
+const SiteFooter = ({ ...props }) => (
   <FooterContainer>
     <Wrapper>
       <p>
         <FooterText>
           Copyright &copy; 2019 Clear View Escapes. All rights reserved.
         </FooterText>
-        <Button href={'/'} secondary className={'open-modal'}>
+        <Button href={'/'} secondary handleModalOpen={props.handleModalOpen}>
           Get in Touch
         </Button>
       </p>

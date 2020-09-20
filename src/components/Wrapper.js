@@ -6,7 +6,8 @@ const StyledWrapper = styled.div`
   overflow: hidden;
   padding-left: 18px;
   padding-right: 18px;
-  max-width: ${(props) => (props.isMedium ? `976px` : `1236px`)};
+  max-width: ${(props) =>
+    props.isNarrow ? `470px` : props.isMedium ? `976px` : `1236px`};
   margin-left: auto;
   margin-right: auto;
 
@@ -39,10 +40,17 @@ const StyledWrapper = styled.div`
 `;
 
 const Wrapper = ({ ...props }) => {
-  const { isMedium, hasNoPaddingUntilLg, isNested, hasMarginBottom } = props;
+  const {
+    isMedium,
+    isNarrow,
+    hasNoPaddingUntilLg,
+    isNested,
+    hasMarginBottom,
+  } = props;
   return (
     <StyledWrapper
       isMedium={isMedium}
+      isNarrow={isNarrow}
       hasNoPaddingUntilLg={hasNoPaddingUntilLg}
       isNested={isNested}
       hasMarginBottom={hasMarginBottom}
