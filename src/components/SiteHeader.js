@@ -16,9 +16,11 @@ const HeaderContainer = styled.header`
   padding: 10px 0;
   transition: background-color 0.3s ease-out;
 
-  .isExpanded {
-    background-color: rgba(47, 85, 114, 0.55);
-  }
+  ${(props) =>
+    props.isOpen &&
+    css`
+      background-color: rgba(47, 85, 114, 0.55);
+    `}
 
   ${respondTo.md`
     position: fixed;
@@ -71,11 +73,13 @@ const MenuContent = styled.div`
     transform: scale(1);
     `}
 
-  .isVisible {
-    opacity: 1;
-    z-index: 1;
-    transform: scale(1);
-  }
+  ${(props) =>
+    props.isOpen &&
+    css`
+      opacity: 1;
+      z-index: 1;
+      transform: scale(1);
+    `}
 `;
 
 const BtnContainer = styled.div`
@@ -85,6 +89,7 @@ const BtnContainer = styled.div`
 `;
 
 const SiteHeader = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
 
   window.addEventListener(
@@ -101,7 +106,7 @@ const SiteHeader = () => {
   };
 
   return (
-    <HeaderContainer isDark={isDark}>
+    <HeaderContainer isOpen={isOpen} isDark={isDark}>
       <Wrapper>
         <LogoContainer isDark={isDark}>
           <img
@@ -109,8 +114,8 @@ const SiteHeader = () => {
             alt={`logo`}
           />
         </LogoContainer>
-        <MenuIcon />
-        <MenuContent>
+        <MenuIcon isOpen={isOpen} setIsOpen={setIsOpen} />
+        <MenuContent isOpen={isOpen}>
           <BtnContainer>
             <Button href="/" className="open-modal">
               Get in Touch
