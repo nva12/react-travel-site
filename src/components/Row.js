@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { clearfix } from '../styles/mixins';
+import { clearfix, respondTo } from '../styles/mixins';
 
 const RowContainer = styled.div`
   ${clearfix}
@@ -40,16 +40,36 @@ const RowContainer = styled.div`
         padding-right: 100px;
       }
     `}
+
+  ${(props) =>
+    props.equalHeightAtLg &&
+    css`
+      ${respondTo.lg`display: flex;`}
+
+      & > div {
+        ${respondTo.lg`
+        float: none;
+        display: flex;
+        `}
+      }
+    `}
 `;
 
 const Row = ({ ...props }) => {
-  const { paddingTop, gutters, guttersSmall, guttersLarge } = props;
+  const {
+    paddingTop,
+    gutters,
+    guttersSmall,
+    guttersLarge,
+    equalHeightAtLg,
+  } = props;
   return (
     <RowContainer
       paddingTop={paddingTop}
       gutters={gutters}
       guttersSmall={guttersSmall}
       guttersLarge={guttersLarge}
+      equalHeightAtLg={equalHeightAtLg}
     >
       {props.children}
     </RowContainer>

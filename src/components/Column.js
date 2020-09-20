@@ -62,18 +62,6 @@ ${(props) =>
     width: 33.33%;
   `}
     `}
-
-${(props) =>
-    props.equalHeightAtLg &&
-    css`
-      & > div {
-        float: none;
-        display: flex;
-      }
-      ${respondTo.lg`
-    display: flex;
-  `}
-    `}
 `;
 
 const Column = ({ ...props }) => {
@@ -85,7 +73,6 @@ const Column = ({ ...props }) => {
     col8MdSmaller,
     marginBottomUntilMd,
     col4Lg,
-    equalHeightAtLg,
   } = props;
   return (
     <ColumContainer
@@ -96,7 +83,6 @@ const Column = ({ ...props }) => {
       col8MdSmaller={col8MdSmaller}
       marginBottomUntilMd={marginBottomUntilMd}
       col4Lg={col4Lg}
-      equalHeightAtLg={equalHeightAtLg}
     >
       {props.children}
     </ColumContainer>

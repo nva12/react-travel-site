@@ -13,7 +13,7 @@ const Testimonials = () => (
         <img src={require('../images/icons/comment.svg')} alt={'icon'} />
         Real <strong>Testimonials</strong>
       </SectionTitle>
-      <Row gutters guttersSmall paddingTop equalHeightAtLarge>
+      <Row gutters guttersSmall paddingTop equalHeightAtLg>
         <Column col4Lg>
           <Testimonial>
             <div className={'testimonialPhoto'}>

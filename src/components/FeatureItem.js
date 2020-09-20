@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Zoom from 'react-reveal/Zoom';
 import { respondTo } from '../styles/mixins';
 import GenericContentContainer from './GenericContentContainer';
 
@@ -33,9 +34,11 @@ const FeatureContainer = styled.div`
 `;
 
 const FeatureItem = ({ ...props }) => (
-  <FeatureContainer>
-    <GenericContentContainer>{props.children}</GenericContentContainer>
-  </FeatureContainer>
+  <Zoom>
+    <FeatureContainer>
+      <GenericContentContainer>{props.children}</GenericContentContainer>
+    </FeatureContainer>
+  </Zoom>
 );
 
 export default FeatureItem;
